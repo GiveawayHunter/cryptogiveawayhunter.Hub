@@ -63,7 +63,7 @@
       font-weight: bold;
       margin-top: 10px;
     }
-    .popup, .visitor-count, .theme-toggle, .welcome-popup {
+    .popup, .visitor-count, .theme-toggle, .welcome-popup, .order-counter, .testimonial-slider {
       z-index: 9999;
     }
     .popup {
@@ -79,11 +79,11 @@
       display: none;
       animation: fadeInOut 6s ease-in-out;
     }
-    .whatsapp {
+    .telegram-live-chat {
       position: fixed;
-      bottom: 20px;
+      bottom: 80px;
       right: 20px;
-      background-color: #25d366;
+      background-color: #0088cc;
       color: white;
       font-size: 20px;
       padding: 10px 15px;
@@ -92,8 +92,8 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
       text-decoration: none;
     }
-    .whatsapp:hover {
-      background-color: #1ebc57;
+    .telegram-live-chat:hover {
+      background-color: #007ab8;
     }
     .visitor-count {
       position: fixed;
@@ -105,9 +105,20 @@
       border-radius: 8px;
       font-size: 0.9em;
     }
-    .theme-toggle {
+    .order-counter {
       position: fixed;
       top: 20px;
+      left: 20px;
+      background: #00ffcc;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      font-weight: bold;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 60px;
       left: 20px;
       background: #333;
       color: #fff;
@@ -128,80 +139,68 @@
       display: none;
       animation: fadeInOut 8s ease-in-out;
     }
-    @keyframes fadeInOut {
-      0% {opacity: 0; transform: translateY(20px);}
-      10% {opacity: 1; transform: translateY(0);}
-      90% {opacity: 1;}
-      100% {opacity: 0; transform: translateY(20px);}
+    .testimonial-slider {
+      overflow: hidden;
+      white-space: nowrap;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    .testimonial-slider span {
+      display: inline-block;
+      padding-right: 100%;
+      animation: scrollText 40s linear infinite;
+    }
+    .partner-program {
+      background-color: #111;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .partner-program h2 {
+      color: #00ffcc;
+    }
+    .partner-program p {
+      margin: 10px 0;
+    }
+    .partner-program a {
+      color: #fff;
+      background-color: #00cc99;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
+  <div class="order-counter" id="orderCounter">🔥 1,318 orders fulfilled</div>
   <div class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</div>
   <div class="visitor-count" id="visitorCount">👁️ 37 visitors online</div>
   <div class="welcome-popup" id="welcomePopup">👋 Welcome to Crypto Giveaway Hunter Hub!</div>  <div class="container">
-    <h1>💎 CRYPTO GIVEAWAY HUNTER HUB 💎</h1><div class="section">
-  <p>Welcome to your trusted zone for fast, manual airdrop task completion. We help you earn more by doing the grind for you 🧠</p>
+    <h1>💎 CRYPTO GIVEAWAY HUNTER HUB 💎</h1><div style="text-align:center; margin-bottom: 20px;">
+  <video width="320" height="180" autoplay loop muted playsinline>
+    <source src="CGH02_animated_logo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
 
-<div class="section highlight">
-  <h2>🚀 What We Do</h2>
-  <ul>
-    <li>Zealy / Galxe / Crew3 task completion</li>
-    <li>LayerZero, Scroll, Blast, zkSync, Mode tasks</li>
-    <li>Top 100 leaderboard placement help</li>
-    <li>24/7 delivery — No bots, all manual</li>
-  </ul>
+<div class="partner-program">
+  <h2>💼 Partner Program</h2>
+  <p>Refer new clients and earn 20% commission per order.</p>
+  <a href="https://t.me/Coingiveawayhunter02">Join Now</a>
 </div>
 
-<div class="section highlight">
-  <h2>💰 Pricing</h2>
-  <ul>
-    <li>30 Tasks = $15</li>
-    <li>50 Tasks = $25</li>
-    <li>Leaderboard campaign = $40</li>
-  </ul>
+<div class="testimonial-slider">
+  <span>“Perfect! Got 50 tasks done in less than a day.🔥” — “Gained leaderboard position without stress!” — “Amazing team. 100% real manual tasks.💯”</span>
 </div>
-
-<div class="section highlight">
-  <h2>💳 Payment Methods</h2>
-  <p><strong>Bitcoin:</strong> bc1qvdc8ny9e9fx0sr6cfnjjts03qek05xcww6aef5</p>
-  <p><strong>Solana:</strong> 3kkLnV3DfprUSpXAzdHFPQSheBEvSjth8EcykA5JYtQQ</p>
-  <p><strong>BNB:</strong> 0x7d5ec32021098Fb69E34aD52e7D95e9cE46978e0</p>
-</div>
-
-<div class="section highlight">
-  <h2>📞 Contact Us</h2>
-  <p><strong>Twitter:</strong> <a href="https://x.com/Givawayhonter02?t=P5C0xj137tuHP5eF8BjVRA&s=09" target="_blank">@Givawayhonter02</a></p>
-  <p><strong>Telegram:</strong> <a href="https://t.me/Coingiveawayhunter02" target="_blank">@Coingiveawayhunter02</a></p>
-</div>
-
-<div class="section highlight">
-  <h2>🧾 Proof of Work</h2>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/100x100?text=Proof1" alt="Proof Screenshot 1">
-    <img src="https://via.placeholder.com/100x100?text=Proof2" alt="Proof Screenshot 2">
-    <img src="https://via.placeholder.com/100x100?text=Proof3" alt="Proof Screenshot 3">
-  </div>
-  <p>Real screenshots of tasks completed for previous clients.</p>
-</div>
-
-<div class="section highlight">
-  <h2>📝 Order Form</h2>
-  <p>Ready to start? Use the Telegram form below to place your order instantly:</p>
-  <a class="form-link" href="https://t.me/Coingiveawayhunter02" target="_blank">💬 Order via Telegram</a>
-</div>
-
-<div class="section highlight">
-  <h2>🗣️ What Our Clients Say</h2>
-  <p>"Fastest and cleanest Zealy worker I’ve hired!"</p>
-  <p>"Helped me win $150 airdrop while I was on vacation 😎"</p>
-</div>
-
-<p style="margin-top: 50px; font-style: italic;">100% Manual – Trusted – Fast Delivery 💼</p>
 
   </div>  <div class="popup" id="popupBox">User4567 just paid $25 for a job well done!</div>
-  <a class="whatsapp" href="https://wa.me/19793449268" target="_blank">💬</a>  <script>
+  <a class="telegram-live-chat" href="https://t.me/Coingiveawayhunter02" target="_blank">💬</a>  <script>
     const popup = document.getElementById('popupBox');
     const users = Array.from({length: 10000}, (_, i) => 'User' + (i + 1));
     const amounts = ['$15', '$25', '$40', '$80'];
@@ -214,14 +213,19 @@
     }
     setInterval(showPopup, 120000);
 
-    // Simulated visitor count
     const visitorElement = document.getElementById('visitorCount');
     setInterval(() => {
       const visitors = Math.floor(Math.random() * 100) + 20;
       visitorElement.textContent = `👁️ ${visitors} visitors online`;
     }, 10000);
 
-    // Welcome popup
+    const orderCounter = document.getElementById('orderCounter');
+    let orderCount = 1318;
+    setInterval(() => {
+      orderCount++;
+      orderCounter.textContent = `🔥 ${orderCount} orders fulfilled`;
+    }, 60000);
+
     const welcome = document.getElementById('welcomePopup');
     setTimeout(() => {
       welcome.style.display = 'block';
@@ -230,7 +234,6 @@
       }, 8000);
     }, 1000);
 
-    // Theme toggle
     function toggleTheme() {
       document.body.classList.toggle('light');
     }
