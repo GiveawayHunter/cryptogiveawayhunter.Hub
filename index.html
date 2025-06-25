@@ -10,6 +10,11 @@
       color: #ffffff;
       margin: 0;
       padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.light {
+      background-color: #f4f4f4;
+      color: #000000;
     }
     .container {
       max-width: 800px;
@@ -36,6 +41,9 @@
       padding: 15px;
       border-radius: 10px;
     }
+    body.light .highlight {
+      background-color: #e0e0e0;
+    }
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -55,10 +63,83 @@
       font-weight: bold;
       margin-top: 10px;
     }
+    .popup, .visitor-count, .theme-toggle, .welcome-popup {
+      z-index: 9999;
+    }
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #222;
+      color: #00ffcc;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 0.95em;
+      box-shadow: 0 0 10px rgba(0,255,204,0.5);
+      display: none;
+      animation: fadeInOut 6s ease-in-out;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 20px;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      text-decoration: none;
+    }
+    .whatsapp:hover {
+      background-color: #1ebc57;
+    }
+    .visitor-count {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #111;
+      color: #00ffcc;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9em;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .welcome-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #222;
+      padding: 20px 30px;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,255,204,0.3);
+      display: none;
+      animation: fadeInOut 8s ease-in-out;
+    }
+    @keyframes fadeInOut {
+      0% {opacity: 0; transform: translateY(20px);}
+      10% {opacity: 1; transform: translateY(0);}
+      90% {opacity: 1;}
+      100% {opacity: 0; transform: translateY(20px);}
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</div>
+  <div class="visitor-count" id="visitorCount">👁️ 37 visitors online</div>
+  <div class="welcome-popup" id="welcomePopup">👋 Welcome to Crypto Giveaway Hunter Hub!</div>  <div class="container">
     <h1>💎 CRYPTO GIVEAWAY HUNTER HUB 💎</h1><div class="section">
   <p>Welcome to your trusted zone for fast, manual airdrop task completion. We help you earn more by doing the grind for you 🧠</p>
 </div>
@@ -76,15 +157,17 @@
 <div class="section highlight">
   <h2>💰 Pricing</h2>
   <ul>
-    <li>20 Tasks = $15</li>
-    <li>40 Tasks = $25</li>
-    <li>70 Tasks = $50</li> 
-    <li>100 Tasks = $70</li>
-
-<li> #CGHC02 #CGH02 #CRYPTOGIVEAWAYHUNTER WORKS 24/7</li>
-
+    <li>30 Tasks = $15</li>
+    <li>50 Tasks = $25</li>
     <li>Leaderboard campaign = $40</li>
   </ul>
+</div>
+
+<div class="section highlight">
+  <h2>💳 Payment Methods</h2>
+  <p><strong>Bitcoin:</strong> bc1qvdc8ny9e9fx0sr6cfnjjts03qek05xcww6aef5</p>
+  <p><strong>Solana:</strong> 3kkLnV3DfprUSpXAzdHFPQSheBEvSjth8EcykA5JYtQQ</p>
+  <p><strong>BNB:</strong> 0x7d5ec32021098Fb69E34aD52e7D95e9cE46978e0</p>
 </div>
 
 <div class="section highlight">
@@ -117,6 +200,39 @@
 
 <p style="margin-top: 50px; font-style: italic;">100% Manual – Trusted – Fast Delivery 💼</p>
 
-  </div>
-</body>
+  </div>  <div class="popup" id="popupBox">User4567 just paid $25 for a job well done!</div>
+  <a class="whatsapp" href="https://wa.me/19793449268" target="_blank">💬</a>  <script>
+    const popup = document.getElementById('popupBox');
+    const users = Array.from({length: 10000}, (_, i) => 'User' + (i + 1));
+    const amounts = ['$15', '$25', '$40', '$80'];
+    function showPopup() {
+      const user = users[Math.floor(Math.random() * users.length)];
+      const amount = amounts[Math.floor(Math.random() * amounts.length)];
+      popup.textContent = `${user} just paid ${amount} for a job well done!`;
+      popup.style.display = 'block';
+      setTimeout(() => { popup.style.display = 'none'; }, 6000);
+    }
+    setInterval(showPopup, 120000);
+
+    // Simulated visitor count
+    const visitorElement = document.getElementById('visitorCount');
+    setInterval(() => {
+      const visitors = Math.floor(Math.random() * 100) + 20;
+      visitorElement.textContent = `👁️ ${visitors} visitors online`;
+    }, 10000);
+
+    // Welcome popup
+    const welcome = document.getElementById('welcomePopup');
+    setTimeout(() => {
+      welcome.style.display = 'block';
+      setTimeout(() => {
+        welcome.style.display = 'none';
+      }, 8000);
+    }, 1000);
+
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+  </script></body>
 </html>
